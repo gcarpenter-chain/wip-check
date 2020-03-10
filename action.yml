@@ -1,10 +1,10 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'wip-check'
+description: 'Action for blocking PRs on labels or titles indicating work in progress'
+author: 'Gabriel Carpenter'
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  labels:
+    description: 'patterns to block on (comma separated)'
+    default: 'wip,do not merge'
 runs:
   using: 'node12'
   main: 'dist/index.js'
