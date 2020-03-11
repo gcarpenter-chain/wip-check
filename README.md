@@ -6,7 +6,7 @@
 
 Add the following yaml to your `.github/workflows` folder:
 
-```
+```yaml
 name: WIP
 on:
   pull_request:
@@ -18,7 +18,17 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: gcarpenter-chain/wip-check@master
+      - uses: gcarpenter-chain/wip-check@v1
+```
+
+You can specify custom labels patterns to block on (case insensitive) by passing in comma separated values to the `labels` input. By default it uses `wip,do not merge`.
+
+```yaml
+    steps:
+      - uses: gcarpenter-chain/wip-check@v1
+        with:
+          # optional, case insensitive, defaults to: wip,do not merge
+          labels: comma,separated,labels
 ```
 
 ## Structure
